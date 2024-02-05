@@ -32,15 +32,20 @@ int main() {
     // cout<<*p<<endl;
     // cout<< &p<<endl;
 
-    int arr[10];
+    // int arr[10];
 
     // ERROR
     // arr=arr+1;
 
-    int *ptr=&arr[0];
-    cout<<ptr<<endl;
-    ptr++;
-    cout<<ptr<<endl;
+    // int *ptr=&arr[0];
+    // cout<<ptr<<endl;
+    // ptr++;
+    // cout<<ptr<<endl;
+
+    int arr[6]={11,21,31};
+    int *p = arr;
+    //int *ptr = arr++;//gives an error
+    cout<<p[2]<<endl;//output is arr[2]
 
     return 0;
 }

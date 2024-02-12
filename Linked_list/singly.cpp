@@ -26,14 +26,29 @@ class Node{
 
 };
 
-void InsertAtHead(Node* &head,int d){
+void InsertAtHead(Node* &head,Node* &tail,int d){
+
+    // empty list
+    if(head==NULL){
+        Node* temp = new Node(d);
+        head = temp;
+        tail=temp;
+    }
+
     // new node create
     Node* temp= new Node(d);
     temp ->next=head; 
     head=temp;
 }
 
-void InsertAtTail(Node* &tail,int d){
+void InsertAtTail(Node* &head,Node* &tail,int d){
+
+    if(tail==NULL){
+        Node* temp = new Node(d);
+        tail=temp;
+        head=temp;
+    }
+
     // new node create
     Node* temp= new Node(d);
     tail ->next=temp; 
@@ -44,7 +59,7 @@ void InsertAtTail(Node* &tail,int d){
 void InsertAtPosition(Node* &head,Node* &tail,int p,int d){
     // insert at start
     if(p==1){
-        InsertAtHead(head,d);
+        InsertAtHead(head,tail,d);
         return;
     }
 
@@ -56,7 +71,7 @@ void InsertAtPosition(Node* &head,Node* &tail,int p,int d){
 
     // inserting at last position
     if(temp->next == NULL){
-        InsertAtTail(tail,d);
+        InsertAtTail(head,tail,d);
         return ;
     }
 
@@ -116,15 +131,17 @@ int main() {
     // cout<< node1->next<<endl;
 
     // head pointed to node1
-    Node* head= node1;
-    Node* tail= node1;
+    // Node* head= node1;
+    // Node* tail= node1;
+    Node* head= NULL;
+    Node* tail= NULL;
     print(head);
     // inserting new node
-    InsertAtHead(head,12);
+    InsertAtHead(head,tail,12);
     print(head);
-    InsertAtHead(head,15);
+    InsertAtHead(head,tail,15);
     print(head);
-    InsertAtTail(tail,20);
+    InsertAtTail(head,tail,20);
     print(head);
     InsertAtPosition(head,tail,3,30);
     print(head);

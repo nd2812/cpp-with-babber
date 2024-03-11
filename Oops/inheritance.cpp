@@ -3,8 +3,8 @@ using namespace std;
 
 class human{
     // protected:
-        int height;
     public:
+        int height;
         int weight;
     // private:
         int age;
@@ -30,7 +30,6 @@ class male:public human{
         return this->height;
     }
 };
-
 
 int main() {
     male m1;

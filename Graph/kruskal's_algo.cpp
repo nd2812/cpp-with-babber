@@ -1,3 +1,5 @@
+// Kruskal's Algorithm for finding Minimum Spanning Tree.
+// disjoint set and union by rank & path compression
 #include<bits/stdc++.h>
 using namespace std;
 
